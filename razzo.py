@@ -1,3 +1,4 @@
+# Bibliotecas para gerar aleatoriedade e limpar o terminal
 import random
 import os
 
