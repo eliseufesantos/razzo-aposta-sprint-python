@@ -1,6 +1,7 @@
 import random
 import os
 
+# Cores usadas no terminal
 cores = {
     'reset': '\033[0m',
     'preto': '\033[30m',
@@ -76,10 +77,9 @@ def comprar_mais_moedas():
                 print(cores["vermelho"]+"Opção inválida. Por favor, escolha 1, 2 ou 3."+cores["reset"])
 
 # Bloco principal
-print(cores["verde"]+"Bem-vindo ao RAZZO, jogo de apostas em corrida de Formula E!"+cores["reset"])
-
 while True:
     limpar_terminal()
+    print(cores["verde"]+"Bem-vindo ao RAZZO, jogo de apostas em corrida de Formula E!"+cores["reset"])
     print(cores["ciano"]+"\nMENU PRINCIPAL"+cores["reset"])
     print("1. Apostar")
     print("2. Verificar Saldo")
@@ -88,9 +88,8 @@ while True:
     
     escolha = input(cores["ciano"]+"Escolha uma opção (1, 2, 3 ou 4): "+cores["reset"])
     
-    # Utilizando match para escolher a opção
     match escolha:
-        case "1":
+        case "1": # Apostar
             limpar_terminal()
             aposta = obter_aposta(saldo)
             carro_escolhido = obter_escolha_carro(carros)
@@ -108,12 +107,12 @@ while True:
             exibir_saldo(saldo)
             voltar()  
         
-        case "2":
+        case "2": # Verificar Saldo
             limpar_terminal()
             exibir_saldo(saldo)
             voltar()  
         
-        case "3":
+        case "3": # omprar mais moedas
             limpar_terminal()
             qtd_moedas, valor_reais = comprar_mais_moedas(saldo)
             saldo += qtd_moedas
@@ -121,7 +120,7 @@ while True:
             exibir_saldo(saldo)
             voltar()  
         
-        case "4":
+        case "4": # Sair
             limpar_terminal()
             print(cores["verde"]+"Obrigado por jogar!"+cores["reset"])
             break
