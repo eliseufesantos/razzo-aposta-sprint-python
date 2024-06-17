@@ -112,7 +112,7 @@ while True:
             exibir_saldo(saldo)
             voltar()  
         
-        case "3": # omprar mais moedas
+        case "3": # Comprar mais moedas
             limpar_terminal()
             qtd_moedas, valor_reais = comprar_mais_moedas(saldo)
             saldo += qtd_moedas
