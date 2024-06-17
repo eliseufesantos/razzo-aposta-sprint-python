@@ -17,20 +17,29 @@ cores = {
 saldo = 100.0  # Saldo inicial do usuário
 carros = ["vermelho", "azul", "verde"]  # Lista global de carros disponíveis
 
-# Função para limpar o terminal
+
 def limpar_terminal():
+
+    """ Função para limpar o terminal"""
+
     os.system('cls')
 
-# Função para voltar
 def voltar():
+
+    """ Função para voltar"""
+
     input(cores['ciano']+"\nPressione ENTER para continuar..."+cores["reset"])
 
-# Função para exibir o saldo atual do usuário
-def exibir_saldo(saldo):
+def exibir_saldo(saldo:float):
+
+    """ Função para exibir o saldo atual do usuário. O parâmetro saldo representa a variável global saldo."""
+
     print(cores["amarelo"]+f"Seu saldo atual é: {saldo:.2f} moedas."+cores["reset"])
 
-# Função para obter a aposta do usuário
-def obter_aposta(saldo):
+def obter_aposta(saldo:float):
+
+    """ Função para obter a aposta do usuário. O parâmetro saldo representa a variável global saldo."""
+
     while True:
         try:
             aposta = float(input(cores["ciano"]+"Digite o valor da sua aposta: "+cores["reset"]))
@@ -43,8 +52,10 @@ def obter_aposta(saldo):
         except ValueError:
             print("Entrada inválida. Por favor, digite um número.")
 
-# Função para obter a escolha do carro do usuário
-def obter_escolha_carro(carros):
+def obter_escolha_carro(carros:list):
+
+    """ Função para obter a escolha do carro do usuário. O parâmetro carros representa a lista global carros."""
+
     while True:
         escolha = input(f"Escolha um carro para apostar ({', '.join(carros)}): ").lower()
         if escolha in carros:
@@ -52,13 +63,17 @@ def obter_escolha_carro(carros):
         else:
             print("Escolha inválida. Por favor, escolha entre os carros disponíveis.")
 
-# Função para simular a corrida e determinar o vencedor
-def simular_corrida(carros):
+def simular_corrida(carros:list):
+
+    """ Função para simular a corrida e determinar o vencedor. O parâmetro carros representa a lista global carros."""
+
     vencedor = random.choice(carros)
     return vencedor
 
-# Função para permitir ao usuário comprar mais moedas
 def comprar_mais_moedas():
+
+    """ Função para permitir ao usuário comprar mais moedas"""
+
     print(cores["ciano"]+"\nOpções de compra de moedas:"+cores["reset"])
     print("1. Receber 100 moedas por R$ 10.00")
     print("2. Receber 50 moedas por R$ 5.00")
