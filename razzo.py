@@ -114,7 +114,7 @@ while True:
         
         case "3": # Comprar mais moedas
             limpar_terminal()
-            qtd_moedas, valor_reais = comprar_mais_moedas(saldo)
+            qtd_moedas, valor_reais = comprar_mais_moedas()
             saldo += qtd_moedas
             print(cores["verde"]+f"\nVocê comprou {qtd_moedas} moedas por R$ {valor_reais:.2f}."+cores["reset"])
             exibir_saldo(saldo)
