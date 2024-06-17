@@ -25,7 +25,6 @@ O *RAZZO* é um jogo de apostas simples baseado em corridas de carros da Formula
 - As opções são apresentadas em um menu principal onde o usuário pode escolher entre apostar, verificar saldo, comprar mais moedas ou sair do jogo.
 - A interface utiliza cores para melhorar a experiência visual do usuário durante a interação.
 
-
 ## Estrutura :computer:
 **Funções Principais:**
 - limpar_terminal(): Limpa o terminal para melhorar a legibilidade.
